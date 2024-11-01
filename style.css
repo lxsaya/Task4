@@ -1,0 +1,227 @@
+/* Общие стили */
+header, main, footer {
+    width: 100%;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f7f7;
+    font-size: 18px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Шапка */
+header {
+    background-color: #9123ff97;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    border-radius: 50%;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2em;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #5f007f;
+}
+
+/* Стили таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border: 2px solid black;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: center;
+    border: 2px solid black;
+}
+
+thead {
+    background-color: #cfa5ff;
+    color: rgb(0, 0, 0);
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f0e3ff;
+}
+
+td img {
+    display: block;
+    margin: 0 auto;
+}
+
+td {
+    vertical-align: top;
+    text-align: center;
+    font-size: 16px;
+}
+
+
+/* Подвал */
+footer {
+    font-size: 24px;
+    background-color: #cfa5ff;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    position: relative;
+}
+
+/* Стили формы */
+.contact-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.contact-form label {
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+.contact-form input[type="submit"] {
+    background-color: #c284ff;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form input[type="submit"]:hover {
+    background-color: #003f7f;
+}
+
+/* Адаптивность: Mobile First */
+
+/* Стили для мобильных телефонов по умолчанию */
+header {
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+nav ul {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+h1 {
+    font-size: 1.5em;
+} 
+
+/* Адаптация для планшетов и десктопов */
+@media (max-width: 768px) {
+
+    header, main, footer {
+        width: 100%;
+    }
+    
+    header {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    /* Возвращаем стандартный порядок для планшетов и десктопов */
+    ul {
+        order: 0;
+    }
+
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+
+    table {
+        order: -1;
+    }
+    .table-section {
+        order: 1;
+         flex-basis: 100%; /* Элементы занимают всю ширину */
+         margin: 0; /* Убираем отступы */
+     }
+    .links-section{
+        order:0;
+        flex-basis: 100%; /* Элементы занимают всю ширину */
+        margin: 0; /* Убираем отступы */
+
+    }
+    body {
+        font-size: 0.9rem; /* Уменьшаем размер шрифта для мобильных */
+    }
+}
